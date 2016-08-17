@@ -1,0 +1,46 @@
+{
+  "name": "redux-persist-node-storage",
+  "version": "1.0.0",
+  "description": "Redux persist adaptor for Node local storage",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "lint": "tslint src/**/*.ts",
+    "test": "npm run build && node dist/index.spec.js && npm run lint",
+    "watch": "tsc --watch",
+    "prepublish": "typings install && npm run build"
+  },
+  "typings": "./index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pellejacobs/redux-persist-node-storage.git"
+  },
+  "files": [
+    "dist",
+    "src",
+    "index.d.ts"
+  ],
+  "keywords": [
+    "redux",
+    "redux-persist",
+    "localstorage"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pellejacobs/redux-persist-node-storage/issues"
+  },
+  "homepage": "https://github.com/pellejacobs/redux-persist-node-storage#readme",
+  "dependencies": {
+    "node-localstorage": "^1.3.0"
+  },
+  "devDependencies": {
+    "async": "^2.0.1",
+    "babel-preset-es2015": "^6.13.2",
+    "tape": "^4.6.0",
+    "tslint": "^3.14.0",
+    "tslint-config-typings": "^0.2.3",
+    "tslint-config-unional": "^0.4.4",
+    "typings": "^1.3.2"
+  }
+}

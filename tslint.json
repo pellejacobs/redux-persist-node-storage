@@ -1,0 +1,9 @@
+{
+  "extends": "tslint-config-typings",
+  "rules": {
+    "semicolon": [
+      true,
+      "never"
+    ]
+  }
+}

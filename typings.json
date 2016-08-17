@@ -1,0 +1,14 @@
+{
+  "name": "redux-persist-node-storage",
+  "dependencies": {
+    "node-localstorage": "github:pellejacobs/typed-node-localstorage#b9abcb762187e00451e6cee2d354e0adda5e6ecc"
+  },
+  "devDependencies": {
+    "async": "registry:npm/async#2.0.1+20160815105832",
+    "tape": "registry:npm/tape#4.0.0+20160723033700"
+  },
+  "globalDependencies": {
+    "node": "registry:env/node#6.0.0+20160813135048"
+  },
+  "globalDevDependencies": {}
+}
