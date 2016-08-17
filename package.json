@@ -1,6 +1,6 @@
 {
   "name": "redux-persist-node-storage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Redux persist adaptor for Node local storage",
   "main": "./dist/index.js",
   "scripts": {
