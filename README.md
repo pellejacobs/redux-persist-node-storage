@@ -5,7 +5,7 @@
 [![npm downloads](https://img.shields.io/npm/dt/redux-persist-node-storage.svg?style=flat-square)](https://www.npmjs.com/package/redux-persist-node-storage)
 
 
-Storage adaptor to use [node-localstorage](https://github.com/lmaccherone/node-localstorage) with [redux-persist](https://github.com/lmaccherone/node-localstorage), by implementing the needed methods: `setItem`, `getItem`, `removeItem` and `getAllKeys`
+Storage adaptor to use [node-localstorage](https://github.com/lmaccherone/node-localstorage) with [redux-persist](https://github.com/rt2zz/redux-persist), by implementing the needed methods: `setItem`, `getItem`, `removeItem` and `getAllKeys`
 
 ## install
 Simply run: 
