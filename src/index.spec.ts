@@ -1,23 +1,31 @@
-import { series } from 'async'
 import test = require('tape')
 import { AsyncNodeStorage } from './index'
 
-test('should implement the interface', test => {
-  let adaptor = new AsyncNodeStorage('../tmp')
-  series([
-    next => adaptor.setItem('key', 'value', next),
-    next => adaptor.getItem('key', (_, value) => {
-      test.equal(value, 'value')
-      next()
-    }),
-    next => adaptor.getAllKeys((_, keys) => {
-      test.deepEqual(keys, ['key'])
-      next()
-    }),
-    next => adaptor.removeItem('key', next),
-    next => adaptor.getAllKeys((_, keys) => {
-      test.deepEqual(keys, [])
-      next()
+let adaptor = new AsyncNodeStorage('../tmp')
+
+test('should implement the interface', t => {
+  return adaptor.setItem('key', 'value')
+    .then(() => {
+      return adaptor.getItem('key')
     })
-  ], test.end)
+    .then((value) => {
+      t.equal('value', value)
+
+      return adaptor.getAllKeys()
+    })
+    .then((keys) => {
+      t.deepEqual(['key'], keys)
+
+      return adaptor.removeItem('key')
+    })
+    .then(() => {
+      return adaptor.getAllKeys()
+    })
+    .then((keys) => {
+      t.deepEqual([], keys)
+      t.end()
+    })
+    .catch((err) => {
+      t.end(err)
+    })
 })
