@@ -7,8 +7,8 @@ export class AsyncNodeStorage {
     this.localStorage = new LocalStorage(storageDirectory)
   }
 
-  getItem (key: string): Promise<string> {
-    return new Promise((resolve, reject) => {
+  getItem (key: string) {
+    return new Promise<string>((resolve, reject) => {
       try {
         const storedValue = this.localStorage.getItem(key)
         process.nextTick(() => resolve(storedValue))
@@ -18,8 +18,8 @@ export class AsyncNodeStorage {
     })
   }
 
-  setItem (key: string, value: string | number): Promise<void> {
-    return new Promise((resolve, reject) => {
+  setItem (key: string, value: string | number) {
+    return new Promise<void>((resolve, reject) => {
       try {
         this.localStorage.setItem(key, value)
         process.nextTick(() => resolve())
@@ -29,8 +29,8 @@ export class AsyncNodeStorage {
     })
   }
 
-  removeItem (key: string): Promise<void> {
-    return new Promise((resolve, reject) => {
+  removeItem (key: string) {
+    return new Promise<void>((resolve, reject) => {
       try {
         this.localStorage.removeItem(key)
         process.nextTick(() => resolve())
@@ -40,8 +40,8 @@ export class AsyncNodeStorage {
     })
   }
 
-  getAllKeys (): Promise<string[]> {
-    return new Promise((resolve, reject) => {
+  getAllKeys () {
+    return new Promise<string[]>((resolve, reject) => {
       try {
         let keys = []
         for (let i = 0; i < this.localStorage.length; i++) {
