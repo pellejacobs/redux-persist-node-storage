@@ -3,8 +3,8 @@ import { LocalStorage } from 'node-localstorage'
 export class AsyncNodeStorage {
   private localStorage: LocalStorage
 
-  constructor(storageDirectory: string) {
-    this.localStorage = new LocalStorage(storageDirectory)
+  constructor(storageDirectory: string, maxStorageeSize: number = 5) {
+    this.localStorage = new LocalStorage(storageDirectory, maxStorageeSize * 1024 * 1024)
   }
 
   getItem (key: string) {
