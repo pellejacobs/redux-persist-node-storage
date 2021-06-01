@@ -19,5 +19,5 @@ npm install --save redux-persist-node-storage
 import { AsyncNodeStorage } from 'redux-persist-node-storage'
 import { persistStore, autoRehydrate } from 'redux-persist'
 const store = createStore(reducer, undefined, autoRehydrate())
-persistStore(store, { storage: new AsyncNodeStorage('/tmp/storageDir') })
+persistStore(store, { storage: new AsyncNodeStorage('/tmp/storageDir', 10) }) // 10MB limit for storage
 ``` 
